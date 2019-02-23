@@ -6,8 +6,11 @@ Created by [Ray Heffer](https://rayheffer.com) on February 23 2019
 
 ## Usage
 Max = Number of images you want downloaded
+
 URL = The URL of the site to use (E.g. https://www.thispersondoesnotexist.com/image)
+
 imgdir = Directory to place the images (E.g. images)
+
 
 Feel free to modify this script to your own needs. Have fun!
 
