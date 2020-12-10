@@ -9,6 +9,9 @@ max=5
 url=https://www.thispersondoesnotexist.com/image
 imgdir=images
 
+# Create images directory if it doesn't exist
+mkdir -p $imgdir
+
 printf 'Downloading '$max' images'
 printf '\n'
 
@@ -16,13 +19,11 @@ printf '\n'
 count=1
 while [ $count -le $max ]
 do
-wget -q $url -P images/
+wget -q $url -P $imgdir/
 printf '\r%2d Completed' $count
 ((count++))
 done
 
-# Create images directory if it doesn't exist
-mkdir -p $imgdir
 cd $imgdir
 
 # Checks each file downloaded for file extension, to avoid overwriting existing images
@@ -35,5 +36,5 @@ done;
 
 # Complete!
 printf '\n'
-printf 'Downloads complete! All images saved to images/'
+printf "Downloads complete! All images saved to $imgdir/"
 printf '\n'
