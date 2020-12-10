@@ -8,6 +8,7 @@
 max=5
 url=https://www.thispersondoesnotexist.com/image
 imgdir=images
+delay=0.5
 
 printf 'Downloading '$max' images'
 printf '\n'
@@ -18,6 +19,7 @@ while [ $count -le $max ]
 do
 wget -q $url -P images/
 printf '\r%2d Completed' $count
+sleep $delay
 ((count++))
 done
 
